@@ -1,5 +1,6 @@
 #import "SimpleVideoFilterViewController.h"
 #import <AssetsLibrary/ALAssetsLibrary.h>
+#import "GPUImageColorCustomFilter.h"
 
 @implementation SimpleVideoFilterViewController
 
@@ -22,7 +23,7 @@
 {
     [super viewDidLoad];
     
-    videoCamera = [[GPUImageVideoCamera alloc] initWithSessionPreset:AVCaptureSessionPreset640x480 cameraPosition:AVCaptureDevicePositionBack];
+    videoCamera = [[GPUImageVideoCamera alloc] initWithSessionPreset:AVCaptureSessionPresetHigh cameraPosition:AVCaptureDevicePositionBack];
 //    videoCamera = [[GPUImageVideoCamera alloc] initWithSessionPreset:AVCaptureSessionPreset640x480 cameraPosition:AVCaptureDevicePositionFront];
 //    videoCamera = [[GPUImageVideoCamera alloc] initWithSessionPreset:AVCaptureSessionPreset1280x720 cameraPosition:AVCaptureDevicePositionBack];
 //    videoCamera = [[GPUImageVideoCamera alloc] initWithSessionPreset:AVCaptureSessionPreset1920x1080 cameraPosition:AVCaptureDevicePositionBack];
@@ -31,7 +32,8 @@
     videoCamera.horizontallyMirrorFrontFacingCamera = NO;
     videoCamera.horizontallyMirrorRearFacingCamera = NO;
 
-    filter = [[GPUImageSepiaFilter alloc] init];
+//    filter = [[GPUImageSepiaFilter alloc] init];
+    filter = [[GPUImageColorCustomFilter alloc] init];
   
 //    filter = [[GPUImageTiltShiftFilter alloc] init];
 //    [(GPUImageTiltShiftFilter *)filter setTopFocusLevel:0.65];

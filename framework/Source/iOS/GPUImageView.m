@@ -192,6 +192,7 @@
     [self recalculateViewGeometry];
 }
 
+
 - (void)destroyDisplayFramebuffer;
 {
     [GPUImageContext useImageProcessingContext];
